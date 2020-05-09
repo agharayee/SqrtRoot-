@@ -1,0 +1,49 @@
+
+@{
+    ViewData["Title"] = "Square Root Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This simple program will take two numbers from the users and display the highest Square Root.</p>
+    <p>Please Note a negative value will not run</p>
+</div>
+
+<div class="container border">
+    <form method="post" asp-controller="Sqrt" asp-action="SqrtRoot">
+            <div class="row form-group">
+            <div class="col-4" >
+                <label>Please Enter first Number</label>
+              
+        </div>
+        <div class="col-6" >
+            <input  type="number" required class="form-control" name="firstNumber" placeholder="Please Enter first Number"/>
+            
+        </div>
+
+        <div class="col-4" >
+                <label>Please Enter Second Number</label>
+        </div>
+        <div class="col-6"  >
+            <input type="number" required class="form-control" name="secondNumber" placeholder="Please Enter Second Number"/>
+        </div>
+           <span class="text-danger">@ViewBag.Error</span>
+           <span class="text-danger">@ViewBag.Same</span>
+                @{
+                   if (ViewBag.Sqrt != null)
+                   {
+                   <div>
+                    <p class="text-success">The Number with the highest square root is @ViewBag.Large and the square root of @ViewBag.Large is @ViewBag.Sqrt</p>
+                   </div>
+                    }
+                } 
+         <div class="col-6 offset-4">
+            <input type="submit" class="btn btn-primary form-control" name="secondNumber" placeholder="Please Enter Second Number"/>
+        </div>
+    </form>
+   
+
+        
+    </div>
+</div>
+
